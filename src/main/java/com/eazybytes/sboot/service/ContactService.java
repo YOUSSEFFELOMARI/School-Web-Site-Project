@@ -28,8 +28,6 @@ public class ContactService {
     public boolean saveMessageDetails(Contact contact) {
         boolean isSaved=false;
         contact.setStatus(sbootConstants.OPEN);
-        contact.setCreatedBy(sbootConstants.ANONYMOUS);
-        contact.setCreatedAt(LocalDateTime.now());
         Contact savedContact = contactRepository.save(contact);
         if (savedContact.getContactId()>0){
             isSaved=true;
@@ -38,7 +36,7 @@ public class ContactService {
     }
 
     public List<Contact> findMsgsWithOpenStatus(){
-        List<Contact> contactMsgs = contactRepository.findMsgsWithStatus(sbootConstants.OPEN);
+        List<Contact> contactMsgs = contactRepository.findByStatus(sbootConstants.OPEN);
         return contactMsgs;
     }
 
