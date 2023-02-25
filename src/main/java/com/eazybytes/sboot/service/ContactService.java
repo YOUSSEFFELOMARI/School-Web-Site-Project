@@ -40,13 +40,11 @@ public class ContactService {
         return contactMsgs;
     }
 
-    public boolean updateMsgStatus(int contactId, String updatedBy){
+    public boolean updateMsgStatus(int contactId){
         boolean isUpdated = false;
         Optional<Contact> contact = contactRepository.findById(contactId);
         contact.ifPresent(contact1 -> {
             contact1.setStatus(sbootConstants.CLOSE);
-            contact1.setUpdatedBy(updatedBy);
-            contact1.setUpdatedAt(LocalDateTime.now());
         });
         Contact updatedContact = contactRepository.save(contact.get());
         if(updatedContact.getUpdatedBy() != null) {

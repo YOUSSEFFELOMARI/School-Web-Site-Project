@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan("com.eazybytes.sboot.model")
 @EnableJpaRepositories("com.eazybytes.sboot.repository")
-@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
+@EnableJpaAuditing(auditorAwareRef = "AuditAwareImpl")
 public class SbootApplication {
 
 	public static void main(String[] args) {
