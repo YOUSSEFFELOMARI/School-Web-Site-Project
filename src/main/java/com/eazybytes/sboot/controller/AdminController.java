@@ -92,6 +92,7 @@ public class AdminController {
         EazyClass eazyClass = (EazyClass) session.getAttribute("eazyClass");
         Optional<Person> person = personRepository.findById(personId);
         person.get().setEazyClass(null);
+        personRepository.save(person.get());
         eazyClass.getPersons().remove(person.get());
         EazyClass eazyClassSaved = eazyClassRepository.save(eazyClass);
         session.setAttribute("eazyClass",eazyClassSaved);
