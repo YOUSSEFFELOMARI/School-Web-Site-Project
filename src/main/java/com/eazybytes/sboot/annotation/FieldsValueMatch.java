@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = FieldsValueMatchValidator.class)
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface FieldsValueMatch {
+public @interface  FieldsValueMatch {
 
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};

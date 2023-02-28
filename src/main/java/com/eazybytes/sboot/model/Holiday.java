@@ -1,7 +1,6 @@
 package com.eazybytes.sboot.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.Data;
 
 @Data
